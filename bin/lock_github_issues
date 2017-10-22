@@ -1,0 +1,18 @@
+#!/usr/bin/env php
+<?php
+declare(strict_types=1);
+require_once __DIR__ . '/../vendor/autoload.php';
+
+if (empty($argv[1])) {
+    echo 'Argument #1 must be a repository URL';
+    exit(1);
+}
+
+if (empty($argv[2])) {
+    echo 'Argument #2 must be a token with access to the repository';
+    exit(2);
+}
+
+$argv[3] = (int) ($argv[3] ?? 180);
+
+(new \NamelessCoder\GithubIssueLock\IssueLock())->lock(...array_slice($argv, 1));

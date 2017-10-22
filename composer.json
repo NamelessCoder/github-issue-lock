@@ -1,0 +1,11 @@
+{
+  "name": "namelesscoder/github-issue-lock",
+  "autoload": {
+    "psr-4": {
+      "NamelessCoder\\GithubIssueLock\\": "src/"
+    }
+  },
+  "bin": [
+    "bin/lock_github_issues"
+  ]
+}
